@@ -6,7 +6,6 @@ import { Form } from "@/components/ui/form";
 import { createProperty } from "@/server/property";
 import { Property, property } from "@/types/property";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
@@ -15,8 +14,6 @@ export default function AddNewProperty() {
   const form = useForm<Property>({
     resolver: zodResolver(property),
   })
-
-  const session = useSession();
 
   const router = useRouter();
 
